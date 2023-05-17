@@ -1,0 +1,7 @@
+.aside-css{
+    background-color: rgb(70, 36, 36);
+    width: 100%;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}

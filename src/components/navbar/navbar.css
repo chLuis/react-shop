@@ -1,0 +1,16 @@
+.navbar-css {
+    display: flex;
+    justify-content: space-between;
+    height: 12dvh;
+    overflow: hidden;
+}
+
+.navbar-div {
+    background-color: rgb(108, 161, 161);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding-inline: 6px;
+}
