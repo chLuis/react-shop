@@ -1,9 +1,11 @@
 .header-css{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: rgb(2, 2, 79);
-    color: beige;
+    background: rgb(38,12,191);
+    background: linear-gradient(90deg, rgb(31, 9, 158) 0%, rgba(15,14,130,1) 50%, rgba(0,14,79,1) 100%);
+    color: rgb(227, 227, 227);
     height: 3dvh;
+    font-family: Arial, Helvetica, sans-serif
 }
