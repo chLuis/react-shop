@@ -1,0 +1,23 @@
+.main-css {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.h2-main{
+    text-align: center;
+}
+.btn-main{
+    width: 140px;
+    margin: 5px auto;
+    padding: 5px 0px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+#data-show{
+    margin: auto;
+    text-align: center;
+    background-color: antiquewhite;
+    width: 100%;
+}

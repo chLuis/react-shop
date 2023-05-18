@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
-import { Navbar, Aside, Header } from './components';
+import { Navbar, Aside, Header, Main } from './components';
 
 function App() {
   return (
     <>
+
     <Routes>
       <Route path='/*' element={<Header />}/>
     </Routes>
@@ -14,6 +15,10 @@ function App() {
     <Routes>
       <Route path='/' element={<Aside />}/>
     </Routes>
+    <Routes>
+      <Route path='/' element={<Main />}/>
+    </Routes>
+
     </>
   );
 }

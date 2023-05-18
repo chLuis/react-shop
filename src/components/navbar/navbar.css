@@ -18,6 +18,7 @@
     margin-inline: 5px;
     border-radius: 8px;
     height: 3dvh;
+    width: 100%;
 }
 .navbar-div button {
     height: 4dvh;

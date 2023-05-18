@@ -1,7 +1,29 @@
 .aside-css{
-    background-color: rgb(70, 36, 36);
+    background-color: rgba(110, 79, 79, 0.455);
     width: 100%;
     color: whitesmoke;
     display: flex;
     justify-content: center;
+    height: 15dvh;
+    padding: 5px;
+}
+.aside-css img {
+    width: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+@media (max-width: 450px){
+    .aside-css {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+    .aside-css img {
+        width: 98%;
+        object-fit: contain;
+        padding: 0px;
+        margin: auto;
+    }
 }
