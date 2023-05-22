@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import './main.css'
 import { getPokemons, searchPokemon } from "../../redux/actions";
-import { GET_POKEMONS } from "../../redux/types";
+//import { GET_POKEMONS } from "../../redux/types";
 
 
 export const Main = () => {
