@@ -13,7 +13,7 @@ export const Navbar = () => {
         <nav className="navbar-css">
             <img className="img-navbar" src={imagenPokemon} alt="Imagen pokemon"/>
             <div className="navbar-div">
-                <input id="button-search" type="text"></input>
+                <input id="-------button-search" type="text"></input>
                 <button onClick={clickLupa}>🔍</button>
             </div>
             <div className="navbar-div">

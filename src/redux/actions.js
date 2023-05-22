@@ -18,8 +18,26 @@ export const getPokemons = () => {
         }
     }
 }
+export const searchPokemon = (contenido) => {
+    //const buscador = "ivysaur"
+    return async function(dispatch) {
+        try{
+            console.log("Estamos trayendola")
+            return dispatch({
+                type: SEARCH_POKEMON,
+                payload: contenido
+            })
+        }
+        catch(error) {
+            
+            return error
+        }
+    }
+    //console.log("Estamos buscando desde actions")
+    //console.log(contenido)
 
-export const searchPokemon = () => {
-    console.log("Estamos buscando")
-    console.log(SEARCH_POKEMON)
-}
+    //console.log(SEARCH_POKEMON)
+    //console.log(GET_POKEMONS)
+};
+
+
