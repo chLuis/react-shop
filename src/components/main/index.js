@@ -4,70 +4,34 @@ import './main.css'
 import { getPokemons } from "../../redux/actions";
 //import { GET_POKEMONS } from "../../redux/types";
 
-
 export const Main = () => {
 
-    //const { pokemon, searchPokemon: buscarPokemon } = useSelector(state => state)
-
     const dispatch =  useDispatch()
-    
+
     function traerData() {
-        console.log("Estamos trayendo data")
+        alert("Datos conseguidos")
         dispatch(getPokemons())
     }
-    //let mostrando = {name: "No hay nada"}
-    // const filtrarData = (event) => {
-    //     //dispatch(buscarPokemon());
-    //     console.log("Busque ", buscarPokemon);
-    //     console.log(event)
-    //     //console.log(pokemon[2].name)
-    //     const pokemonBuscado = pokemon.find(pokemon => pokemon.name === event)
-    //     console.log(pokemonBuscado)
-    //     if(pokemonBuscado){
-    //         dispatch(searchPokemon(pokemonBuscado))
-    //     } else {
-    //         dispatch(searchPokemon([]))
-    //     }
-        
-    //     searchPokemon()
-    // }
-    
-    //const pokemon_img = useSelector(state => state.findPokemon?.sprites.other.dream_world.front_default)
-    //console.log(useSelector(state => state.pokemon))
-    //console.log("useSelector")
-    console.log(useSelector(state => state.searchPokemon))
-    const pokemonEncontrado = useSelector(state => state.searchPokemon)
-    function mirarData() {
-        console.log("Mirando")
-        console.log(pokemonEncontrado.url)
-        //console.log(useSelector(state => state.searchPokemon))
-    }
-
-
 
     return(
         <main className="main-css">
-            <h2 className="h2-main">Aqui estamos en el main</h2>
             <button className="btn-main" onClick={traerData}>Traer data</button>
-            <div>
-            {/* <input id="button-search" type="text" onChange={event => filtrarData(event.target.value)}></input> */}
-            {/* <button className="btn-main" onClick={filtrarData}>Filtrar data</button> */}
+            <div id="data-show"><h4>Pokemon buscado:</h4>
+            <div id="div-search">
+            <p className="p-search">{useSelector(state => state.searchPokemon?.name)}</p>            
+            <div id="div-tipo">
+            <h5>Tipo</h5>
+            <p className="p-tipo">
+                {useSelector(state => state.findPokemon.types?.map(el => el.type.name))?.map(el => <p key={el}>{el}</p>)}
+            </p>
             </div>
-            <div id="data-show"><h4>Aqui se mostrarán</h4>
-            {/* {pokemon?.map(
-                (item, index) => {
-                    return (
-                        <p key={index}> {(item.name)} </p>
-                    )
-                }
-            )}  */}
+            <img src={useSelector(state => state.findPokemon.sprites.other.dream_world.front_default)} alt="pokemon" className="img-search"></img>
+            <h5>Habilidades:</h5>
+            <ul className="ul-search">
+                {useSelector(state => state.findPokemon.abilities?.map(el => el.ability.name))?.map(el => <li key={el}>{el}</li>)}
+            </ul>
+
             </div>
-            <div className="div-search">
-            <p className="p-search">{useSelector(state => state.searchPokemon?.name)}</p>
-            <a href={useSelector(state => state.searchPokemon)?.url}>Link</a>
-            <button onClick={mirarData}>Ver más</button>
-            {/* <div>{useSelector(state => state.findPokemon?.sprites.other.dream_world.front_default)}</div> */}
-            <img src={useSelector(state => state.findPokemon.sprites.other.dream_world.front_default)} alt="pokemon"></img>
             </div>
         </main>
     )

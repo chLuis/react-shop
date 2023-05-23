@@ -6,42 +6,39 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 export const Navbar = () => {
-
-    const { pokemon, searchPokemon: buscarPokemon, findPokemon:  buscarPokemonId } = useSelector(state => state)
+    const { pokemon,  findPokemon:  buscarPokemonId } = useSelector(state => state)
+    console.log(buscarPokemonId)
 
     const dispatch = useDispatch()
 
-    function clickLupa(event) {
+    function clickLupa() {
         let buscando = document.getElementById("button-search").value
         const pokemonBuscado = pokemon.find(pokemon => pokemon.name === buscando)
-        dispatch(findPokemon(pokemonBuscado.url))
-        findPokemon(pokemonBuscado.url)
-    }
-    const filtrarData = (event) => {
-        const pokemonBuscado = pokemon.find(pokemon => pokemon.name === event)
-        console.log(pokemonBuscado)
         if(pokemonBuscado){
             dispatch(searchPokemon(pokemonBuscado));
-            //dispatch(findPokemon(pokemonBuscado.url))
-            //console.log(pokemonBuscado.url)
+            document.getElementById("div-search").classList.add("img-see")
+            document.getElementById("div-search").classList.add("div-search")
+            document.getElementById("div-search").classList.remove("img-not")
+            return dispatch(findPokemon(pokemonBuscado.url))
+            
         } else {
-            dispatch(searchPokemon([]))
-            dispatch(findPokemon(""))
+            document.getElementById("div-search").classList.remove("img-see")
+            document.getElementById("div-search").classList.remove("div-search")
+            document.getElementById("div-search").classList.add("img-not")
+            dispatch(findPokemon())
+            return dispatch(searchPokemon())
         }
-        searchPokemon()
-        //findPokemon()
     }
-    console.log(useSelector(state => state.findPokemon.sprites.other.dream_world.front_default))
 
     return (
         <nav className="navbar-css">
             <img className="img-navbar" src={imagenPokemon} alt="Imagen pokemon"/>
             <div className="navbar-div">
-            <input id="button-search" type="text" onClick={event => filtrarData(event.target.value)}></input>
-                <button onClick={event => clickLupa(event.target.value)}>🔍</button>
+            <input id="button-search" type="text" placeholder="charmander" onChange={event => clickLupa(event.target.value)}></input>
+                {/* <button onClick={event => clickLupa(event.target.value)}>🔍</button> */}
             </div>
             <div className="navbar-div">
-                <p>Opciones de busqueda de acuerdo a la data que voy a traer</p>
+                <p>....</p>
                 
             </div>
         </nav>

@@ -1,6 +1,6 @@
 import { GET_POKEMON, GET_POKEMONS, SEARCH_POKEMON } from "./types";
 
-const initialState = { pokemon: [], entrenadores: [], searchPokemon: ["buscando....."], 
+const initialState = { pokemon: [], entrenadores: [], searchPokemon: [ {name: "buscando....."}], 
 findPokemon: {
     "sprites": {
     "other": {

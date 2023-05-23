@@ -18,8 +18,16 @@
 #data-show{
     margin: auto;
     text-align: center;
-    background-color: antiquewhite;
+    background-color: rgb(233, 233, 232);
     width: 100%;
+}
+.img-see {
+    display: block;
+}
+.img-not {
+    display: none !important;
+    background-color: red !important;
+    height: 700px;
 }
 .div-search{
     display: flex;
@@ -29,4 +37,31 @@
 
 .p-search {
     font-size: 2rem;
+}
+.img-search {
+    height: 250px;
+}
+
+.ul-search {
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#div-tipo {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+.p-tipo {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+h5{
+    vertical-align: middle;
+    justify-self: center;
+    align-self: center;
 }

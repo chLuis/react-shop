@@ -7,7 +7,7 @@ export const Header = () => {
         <header className="header-css">
             <span>Proyecto personal de React</span>
             <span>Buscador de pokemones</span>
-            <span>Desarrollado por: chLuis</span>
+            <span>Probando</span>
         </header>
     )
 }

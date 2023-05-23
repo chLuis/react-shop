@@ -5,7 +5,7 @@ import { URL, GET_POKEMONS, SEARCH_POKEMON, GET_POKEMON } from './types'
 export const getPokemons = () => {
     return async function(dispatch) {
         try{
-            console.log("EStamos trayendola")
+            console.log("Estamos trayendola")
             let dataPokemonApi = await axios.get(URL)
             return dispatch({
                 type: GET_POKEMONS,
@@ -19,10 +19,9 @@ export const getPokemons = () => {
     }
 }
 export const searchPokemon = (contenido) => {
-    //const buscador = "ivysaur"
     return async function(dispatch) {
         try{
-            console.log("Estamos trayendola")
+            console.log("Estamos buscando")
             return dispatch({
                 type: SEARCH_POKEMON,
                 payload: contenido
@@ -37,9 +36,8 @@ export const searchPokemon = (contenido) => {
 export const findPokemon = (url_buscada) => {
     return async function(dispatch) {
         try{
-            console.log("Estamos trayendola simplificada")
             let dataPokemonApi = await axios.get(url_buscada)
-            console.log(dataPokemonApi)
+            console.log("Estoy en la funcion findpokemon")
             return dispatch({
                 type: GET_POKEMON,
                 payload: dataPokemonApi.data
