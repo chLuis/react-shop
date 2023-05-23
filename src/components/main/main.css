@@ -21,3 +21,12 @@
     background-color: antiquewhite;
     width: 100%;
 }
+.div-search{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.p-search {
+    font-size: 2rem;
+}

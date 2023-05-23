@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { URL, GET_POKEMONS, SEARCH_POKEMON } from './types'
+import { URL, GET_POKEMONS, SEARCH_POKEMON, GET_POKEMON } from './types'
 
 
 export const getPokemons = () => {
@@ -29,15 +29,26 @@ export const searchPokemon = (contenido) => {
             })
         }
         catch(error) {
-            
             return error
         }
     }
-    //console.log("Estamos buscando desde actions")
-    //console.log(contenido)
-
-    //console.log(SEARCH_POKEMON)
-    //console.log(GET_POKEMONS)
 };
+
+export const findPokemon = (url_buscada) => {
+    return async function(dispatch) {
+        try{
+            console.log("Estamos trayendola simplificada")
+            let dataPokemonApi = await axios.get(url_buscada)
+            console.log(dataPokemonApi)
+            return dispatch({
+                type: GET_POKEMON,
+                payload: dataPokemonApi.data
+            })
+        }
+        catch(error) {
+            return error
+        }
+    }
+}
 
 
