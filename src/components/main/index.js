@@ -19,7 +19,7 @@ export const Main = () => {
             <button className="btn-main" onClick={traerData}>Traer data</button>
             <div id="data-show"><h4>Pokemon buscado:</h4>
             <div id="div-search">
-            <p className="p-search">{useSelector(state => state.searchPokemon?.name)}</p>            
+            <p className="p-search">{useSelector(state => state.findPokemon?.name)}</p>            
             <div id="div-tipo">
             <h5>Tipo</h5>
             <p className="p-tipo">

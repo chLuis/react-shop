@@ -37,6 +37,7 @@
 
 .p-search {
     font-size: 2rem;
+    text-transform: capitalize;
 }
 .img-search {
     height: 250px;
