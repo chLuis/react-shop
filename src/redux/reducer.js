@@ -1,6 +1,6 @@
-import { GET_POKEMON, GET_POKEMONS, SEARCH_POKEMON } from "./types";
+import { GET_POKEMONS, SEARCH_POKEMON } from "./types";
 
-const initialState = { pokemon: [], entrenadores: [], searchPokemon: [ {name: "buscando....."}], 
+const initialState = { pokemon: [], entrenadores: [], 
 findPokemon: {
     "sprites": {
     "other": {
@@ -17,11 +17,6 @@ export const reducerroot = (state = initialState, action) => {
                     ...state,
                     pokemon: action.payload };
         case SEARCH_POKEMON:
-            return {
-                    ...state,
-                    searchPokemon: action.payload
-                };
-        case GET_POKEMON:
             return {
                 ...state,
                 findPokemon: action.payload

@@ -6,6 +6,7 @@ import { getPokemons } from "../../redux/actions";
 
 export const Main = () => {
 
+
     const dispatch =  useDispatch()
 
     function traerData() {
